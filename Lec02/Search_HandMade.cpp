@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n;
-int Search(vector <int> a, int key){
+int Search(vector <int> &a, int key){
     int f=0,l=n-1;
     int mid;
     while(f<=l){
@@ -16,7 +16,7 @@ int Search(vector <int> a, int key){
     }
     return 0;
 }
-int Find(vector <int> a, int key){
+int Find(vector <int> &a, int key){
     int mid;
     int f=0,l=n;
     while(f<=l){
@@ -56,10 +56,10 @@ int main(){
                 cout << 0 << endl;
             }
             else{
-                if(a[check]<=key){
-                    cout << a[check+1] << endl;
+                while(a[check]<=key){
+                    check++;
                 }
-                else cout << a[check] << endl;
+                cout << a[check] << endl;
             }
         }
         else if(tp==2){
@@ -67,14 +67,14 @@ int main(){
             if(key<=a[0]){
                 cout << 0 << endl;
             }
+            else if(key>a[n-1]){
+                cout << a[n-1] << endl;
+            }
             else{
-                if(a[check]>=key){
-                    cout << a[check-1] << endl;
+                while(a[check]>=key){
+                    check--;
                 }
-                else{
-                    if(check==n) check-=1;
-                    cout << a[check] << endl;
-                }
+                cout << a[check] << endl;
             }
         }
     }
