@@ -22,7 +22,7 @@ int main(){
             cin >> i >> k;
             if(i==0){
                 cout << lis[k].front() << endl;
-                lis[k].pop_front(;
+                lis[k].pop_front();
             }
             else{
                 cout << lis[k].back() << endl;
